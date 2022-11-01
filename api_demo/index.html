@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<title>Cat Pics</title>
+
+<body>
+
+  <p>Cat</p>
+  <img id="cat">
+</body>
+
+<script>
+  const myurl = "https://api.thecatapi.com/v1/images/search";
+  fetch(myurl)
+    .then(function(response) {
+      return response.json();
+    }).then(function(pic) {
+      const catImage = pic[0].url;
+      console.log(catImage)
+      document.getElementById("cat").src = catImage;
+    });
+</script>
+</html>
