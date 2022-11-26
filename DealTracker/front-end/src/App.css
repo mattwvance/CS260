@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  position: relative;
+  min-height: 100vh;
+  width: inherit;
+  height: inherit;
+  /*padding-bottom: 2.5rem;*/
+  padding-bottom: 200px;
+  margin: 0;
 }
 
 .App-header {
@@ -9,7 +16,8 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  margin-left: 10px !important;
+  font-size: 25px !important;
 }
 
 .App-intro {
@@ -22,5 +30,36 @@
 
 #nav-container {
   align-items: flex-end;
+}
+
+ul {
+  padding-bottom: 10px !important;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-item {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    height: inherit;
+    text-align: center;
+    color: white;
+    font-size: 20px;
 }
 

@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios';
-import "jquery/dist/jquery.min.js";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.min.js";
-import "bootstrap/js/src/collapse.js";
+import 'bootstrap/dist/css/bootstrap.css';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
-export default class Navbar extends Component {
+export default class Menu extends Component {
   constructor() {
     super();
     this.logout = this.logout.bind(this);
@@ -32,15 +32,39 @@ export default class Navbar extends Component {
     const loggedIn = this.props.loggedIn;
     
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-container">
-        <b className="navbar-brand">Steam Game Discounts</b>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse justify-content-end" id='navbarNav'>
-          
-        </div>
-      </nav>
+      <Navbar className='d-flex justify-content-between' bg='dark' expand='sm' variant='dark' sticky='top'>
+        <Navbar.Brand className="App-title">Steam Game Discounts</Navbar.Brand>
+        <Navbar.Toggle/>
+        <Navbar.Collapse className='justify-content-end'>
+          <Nav>
+            {loggedIn ? (
+            <ul className="navbar-nav">
+              <li className="nav-item m-1">
+                <Link to="/" className="btn btn-link text-secondary">Home</Link>
+              </li>
+              <li className="nav-item m-1">
+                <Link to='/games' className="btn btn-link text-secondary">My Games</Link>
+              </li>
+              <li className="nav-item m-1">
+                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>Logout</Link>
+              </li>
+            </ul>
+            ) : (
+            <ul className="navbar-nav">
+              <li className="nav-item m-1">
+                <Link to="/" className="btn btn-link text-secondary">Home</Link>
+              </li>
+              <li className="nav-item m-1">
+                <Link to='/login' className="btn btn-link text-secondary">Login</Link>
+              </li>
+              <li className="nav-item m-1">
+                <Link to="signup" className="btn btn-link text-secondary">Sign Up</Link>
+              </li>
+            </ul>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
   }
 }
@@ -69,3 +93,13 @@ export default class Navbar extends Component {
           //     <span className="text-secondary">Sign Up</span>
           //   </Link>
           // </div>
+          
+          
+          
+      //     <nav className="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-container">
+      //   <b className="navbar-brand">Steam Game Discounts</b>
+      //   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      //     <span className="navbar-toggler-icon"></span>
+      //   </button>
+        
+      // </nav>

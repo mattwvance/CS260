@@ -5,9 +5,10 @@ import fetch from 'node-fetch';
 // components
 import Signup from './components/sign-up';
 import LoginForm from './components/login-form';
-import Navbar from './components/navbar';
+import Menu from './components/navbar';
 import Home from './components/home';
 import Games from './components/games';
+import Footer from './components/footer'
 const options = {method: 'GET', headers: {accept: 'application/json'}};
 
 export default class App extends Component {
@@ -60,7 +61,7 @@ export default class App extends Component {
   render() {
     return (
       <div class="App">
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        <Menu updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {!this.state.loggedIn &&
           <p>Sign Up to create your own Wishlist!</p>
         }
@@ -71,6 +72,8 @@ export default class App extends Component {
           <Route path="/login" element={<LoginForm updateUser={this.updateUser}/>}/>
           <Route path="/signup" element={<Signup/>}/>
         </Routes>
+        <Footer/>
+        
       </div>
     );
   }

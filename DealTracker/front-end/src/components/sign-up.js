@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Signup extends Component {
 	constructor() {
@@ -47,40 +49,31 @@ render() {
 	return (
 		<div class="SignupForm">
 			<h4>Sign up</h4>
-			<form class="form-horizontal">
-				<div class="form-group">
-					<div class="col-1 col-ml-auto">
-						<label class="form-label" htmlFor="username">Username</label>
-					</div>
-					<div class="col-3 col-mr-auto">
-						<input class="form-input"
-							type="text"
-							id="username"
-							name="username"
-							placeholder="Username"
-							value={this.state.username}
-							onChange={this.handleChange}
-						/>
-					</div>
+			<form class="form-horizontal d-inline-flex flex-column">
+				<div class="form-group d-inline-flex flex-row justify-content-space-between">
+					<label class="form-label" htmlFor="username">Username:</label>
+					<input class="form-input"
+						type="text"
+						id="username"
+						name="username"
+						placeholder="Username"
+						value={this.state.username}
+						onChange={this.handleChange}
+					/>
 				</div>
-				<div class="form-group">
-					<div class="col-1 col-ml-auto">
-						<label class="form-label" htmlFor="password">Password: </label>
-					</div>
-					<div class="col-3 col-mr-auto">
-						<input class="form-input"
+				<div class="form-group d-inline-flex flex-row justify-content-space-between">
+					<label class="form-label" htmlFor="password">Password: </label>
+					<input class="form-input"
 							placeholder="password"
 							type="password"
 							name="password"
 							value={this.state.password}
 							onChange={this.handleChange}
 						/>
-					</div>
 				</div>
 				<div class="form-group ">
-					<div class="col-7"></div>
 					<button
-						class="btn btn-primary col-1 col-mr-auto"
+						class="btn btn-primary"
 						onClick={this.handleSubmit}
 						type="submit"
 					>Sign up</button>
