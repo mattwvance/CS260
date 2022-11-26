@@ -4,8 +4,8 @@ import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios';
 import "jquery/dist/jquery.min.js";
-import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap/js/src/collapse.js";
 
 export default class Navbar extends Component {
@@ -38,31 +38,7 @@ export default class Navbar extends Component {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse justify-content-end" id='navbarNav'>
-          {loggedIn ? (
-          <ul className="navbar-nav">
-            <li className="nav-item m-3">
-              <Link to="/" className="nav-link btn btn-link text-secondary">Home</Link>
-            </li>
-            <li className="nav-item m-3">
-              <Link to='/games' className="nav-link btn btn-link text-secondary">My Games</Link>
-            </li>
-            <li className="nav-item m-3">
-              <Link to="#" className="nav-link btn btn-link text-secondary" onClick={this.logout}>Logout</Link>
-            </li>
-          </ul>
-          ) : (
-          <ul className="navbar-nav">
-            <li className="nav-item m-3">
-              <Link to="/" className="nav-link btn btn-link text-secondary">Home</Link>
-            </li>
-            <li className="nav-item m-3">
-              <Link to='/games' className="nav-link btn btn-link text-secondary">My Games</Link>
-            </li>
-            <li className="nav-item m-3">
-              <Link to="#" className="nav-link btn btn-link text-secondary" onClick={this.logout}>Logout</Link>
-            </li>
-          </ul>
-          )}
+          
         </div>
       </nav>
     );
