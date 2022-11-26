@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222 !important;
+  padding: 20px;
+  color: white !important;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.navbar {
+  margin-top: auto;
+}
+
+#nav-container {
+  align-items: flex-end;
+}
+
