@@ -1,0 +1,41 @@
+.list {
+    /*float: left;*/
+    margin-left: 0; 
+    padding-left: 5px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.list-item {
+    margin-left: 0;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.icon {
+    height: auto;
+    width: auto;
+    margin-left: 5px;
+}
+
+.text {
+    margin: 0;
+    margin-left: 5px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.container-item {
+    /**display: inline;*/
+    /*zoom: 1;*/
+    margin-left: 0;
+    /*flex: 1 1 200px;*/
+    float: left;
+    width: 200px;
+    white-space: nowrap;
+    /*vertical-align: top;*/
+    /*font-size: 12px;*/
+}

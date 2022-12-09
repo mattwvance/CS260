@@ -33,7 +33,7 @@ export default class Menu extends Component {
     
     return (
       <Navbar className='d-flex justify-content-between' bg='dark' expand='sm' variant='dark' sticky='top'>
-        <Navbar.Brand className="App-title">Steam Game Discounts</Navbar.Brand>
+        <Navbar.Brand className="App-title">Game Discounts</Navbar.Brand>
         <Navbar.Toggle/>
         <Navbar.Collapse className='justify-content-end'>
           <Nav>
@@ -68,38 +68,3 @@ export default class Menu extends Component {
     );
   }
 }
-
-// <Link to="/" className="btn btn-link text-secondary">
-//               <span className="text-secondary">Home</span>
-//             </Link>
-//             <Link to='/games' className="btn btn-link text-secondary">
-//               <span className="text-secondary">My Games</span>
-//             </Link>
-//             <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-//               <span className="text-secondary">Logout</span>
-//             </Link>
-
-          // <div className="navbar-section">
-          //   <Link to="/" className="btn btn-link text-secondary">
-          //     <span className="text-secondary">Home</span>
-          //   </Link>
-          //   <Link to='/games' className="btn btn-link text-secondary">
-          //     <span className="text-secondary">My Games</span>
-          //   </Link>
-          //   <Link to="/login" className="btn btn-link text-secondary">
-          //     <span className="text-secondary">Login</span>
-          //   </Link>
-          //   <Link to="/signup" className="btn btn-link">
-          //     <span className="text-secondary">Sign Up</span>
-          //   </Link>
-          // </div>
-          
-          
-          
-      //     <nav className="navbar navbar-expand-lg navbar-dark bg-dark" id="nav-container">
-      //   <b className="navbar-brand">Steam Game Discounts</b>
-      //   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      //     <span className="navbar-toggler-icon"></span>
-      //   </button>
-        
-      // </nav>

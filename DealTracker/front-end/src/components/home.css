@@ -2,15 +2,35 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0 4px;
 }
 
-.game-wrapper {
+
+.game-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 300px;
-    padding: 10px;
+    align-items: flex-end;
+    margin: 10px;
+}
+
+.image-wrapper {
+    width: 300px;
+}
+
+.page-container {
+    height: auto;
+    padding-left: 10px;
+}
+
+.price-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-row {
+    display: flex;
 }
 
 .price {
@@ -24,9 +44,16 @@
 
 .image-style {
     width: 300px;
-    vertical-align: middle;
+}
+
+.image-style:hover {
+    transform: scale(1.02);
 }
 
 .search-bar {
     margin-top: 20px;
+}
+
+#first {
+    float: left;
 }

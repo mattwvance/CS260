@@ -8,7 +8,8 @@ import LoginForm from './components/login-form';
 import Menu from './components/navbar';
 import Home from './components/home';
 import Games from './components/games';
-import Footer from './components/footer'
+import Footer from './components/footer';
+import Info from './components/info';
 const options = {method: 'GET', headers: {accept: 'application/json'}};
 
 export default class App extends Component {
@@ -16,20 +17,33 @@ export default class App extends Component {
     super();
     this.state = {
       loggedIn: false,
-      username: null
+      username: null,
+      allStores: undefined,
+      game: null
     };
 
     this.getUser = this.getUser.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
     this.updateUser = this.updateUser.bind(this);
+    this.setGame = this.setGame.bind(this);
   }
 
   async componentDidMount() {
     this.getUser();
+    
+    fetch('https://www.cheapshark.com/api/1.0/stores', options)
+    .then((response) => response.json())
+    .then(storeList => {
+      this.setState({ allStores: storeList }, () => { console.log(this.state.allStores) });
+    });
   }
 
   updateUser(userObject) {
     this.setState(userObject);
+  }
+  
+  setGame(newGame) {
+    this.setState({ game: newGame });
   }
 
   async getUser() {
@@ -48,11 +62,6 @@ export default class App extends Component {
     });
   }
   
-  async getStores() {
-    const response = await fetch('https://www.cheapshark.com/api/1.0/stores');
-    const data = await response.json();
-  }
-  
   async getGame(title) {
     const response = await fetch('https://www.cheapshark.com/api/1.0/games?title=' + title);
     const data = await response.json();
@@ -62,15 +71,12 @@ export default class App extends Component {
     return (
       <div class="App">
         <Menu updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-        {!this.state.loggedIn &&
-          <p>Sign Up to create your own Wishlist!</p>
-        }
-        
         <Routes>
-          <Route exact path="/" element={<Home username={this.state.username} loggedIn={this.state.loggedIn}/>}/>
-          <Route path='/games' element={<Games username={this.state.username} updateUser={this.updateUser}/>}/>
+          <Route exact path="/" element={<Home username={this.state.username} loggedIn={this.state.loggedIn} setGame={this.setGame} allStores={this.state.allStores}/>}/>
+          <Route path='/games' element={<Games username={this.state.username} allStores={this.state.allStores}/>}/>
           <Route path="/login" element={<LoginForm updateUser={this.updateUser}/>}/>
           <Route path="/signup" element={<Signup/>}/>
+          <Route path='info' element={<Info game={this.state.game}/>}/>
         </Routes>
         <Footer/>
         

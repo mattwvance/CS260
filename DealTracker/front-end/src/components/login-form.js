@@ -30,7 +30,8 @@ class LoginForm extends Component {
             if (response.status === 200) {
                 this.props.updateUser({
                     loggedIn: true,
-                    username: response.data.username
+                    username: response.data.username,
+                    game: null
                 });
                 this.setState({
                     redirectTo: '/'
