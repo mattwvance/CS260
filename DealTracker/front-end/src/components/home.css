@@ -4,14 +4,14 @@
     justify-content: center;
 }
 
-
 .game-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 300px;
     align-items: flex-end;
-    margin: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .image-wrapper {
@@ -20,7 +20,6 @@
 
 .page-container {
     height: auto;
-    padding-left: 10px;
 }
 
 .price-container {
@@ -31,6 +30,13 @@
 
 .container-row {
     display: flex;
+}
+
+.container-cell {
+    float: left;
+    width: 200px !important;
+    /*vertical-align: top;*/
+    /*font-size: 12px;*/
 }
 
 .price {
@@ -54,6 +60,30 @@
     margin-top: 20px;
 }
 
-#first {
-    float: left;
+@media(max-width: 600px) {
+    .game-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 150px;
+        align-items: flex-end;
+        margin: 10px;
+    }
+    
+    .image-style {
+        width: 150px;
+    }
+    
+    .image-wrapper {
+        width: 150px;
+    }
+    .price {
+        font-size: 15px;
+    }
+    
+    .nav-container {
+        margin: 0;
+        margin-left: -15px;
+        margin-right: -20px;
+    }
 }

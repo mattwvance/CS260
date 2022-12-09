@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import fetch from 'node-fetch';
+import 'bootstrap/dist/css/bootstrap.css';
 import SearchFilter from './filter';
 import './home.css';
-import axios from 'axios';
+import axios from 'axios';import './filter.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 const options = {method: 'GET', headers: {accept: 'application/json'}};
 
@@ -74,9 +78,27 @@ export default class Home extends Component {
   
   render() {
     return (
-    <div class='page-container'>
-      <div class='container-row'>
-        <SearchFilter class='container-item' handleChange={this.handleChange} stores={this.props.allStores}/>
+    <div class='page-container d-flex flex-row align-items-start'>
+        <Navbar expand='sm' sticky='top'>
+          <Navbar.Toggle/>
+          <Navbar.Collapse>
+            <Nav className='list'>
+              <h4>Stores</h4>
+              <i>(Defult is all stores)</i>
+              <ul class='nav-container'>
+              {this.props.allStores?.map(store => ( 
+                <li>
+                <div class='list-item'>
+                  <input type='checkbox' onChange={ this.handleChange } value={ store.storeID }></input>
+                  <img alt='store' class='icon' src={'https://www.cheapshark.com'+ store.images.icon}/>
+                  <span class='text'>{store.storeName}</span>
+                </div>
+                </li>
+              ))}
+              </ul>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
         <div>
           {!this.props.loggedIn &&
             <span>Sign Up to create your own Wishlist!</span>
@@ -103,7 +125,6 @@ export default class Home extends Component {
               </div>
             ))}
           </div>
-        </div>
       </div>
     </div>
     );
